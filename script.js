@@ -68,8 +68,6 @@ document.getElementById("startButton").addEventListener("click", () => {
   startWorkerWithPhase(focusDurationMs); // Starts with the focus phase
 });
 
-document.getElementById("resetButton").addEventListener("click", resetTimer);
-
 function askNotificationPermission() {
   if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");
