@@ -1,8 +1,8 @@
 let worker;
 let isRelaxTime = false; // Tracks the current phase: relax or focus
 
-const focusDurationMs = 15 * 1000; // 15 seconds for demonstration (originally 20 minutes)
-const relaxDurationMs = 10 * 1000; // 10 seconds for relaxation
+const focusDurationMs = 20 * 60 * 1000; // 15 seconds for demonstration (originally 20 minutes)
+const relaxDurationMs = 20 * 1000; // 10 seconds for relaxation
 
 function startWorkerWithPhase(duration) {
   if (worker) {
