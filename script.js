@@ -85,5 +85,7 @@ function showNotification() {
       // Make sure the path to the icon is correct or remove it if not needed
       icon: "path/to/icon.png",
     });
+  } else {
+    console.log("Notification permission denied");
   }
 }
