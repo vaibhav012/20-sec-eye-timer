@@ -77,7 +77,7 @@ function askNotificationPermission() {
 }
 
 function showNotification() {
-  if (Notification.permission === "granted") {
+  if (Notification.permission === "granted" && isWorktime()) {
     new Notification("Focus Phase Completed", {
       body: "Time to relax! Take a short break.",
       // Make sure the path to the icon is correct or remove it if not needed
@@ -86,4 +86,13 @@ function showNotification() {
   } else {
     console.log("Notification permission denied");
   }
+}
+
+function isWorktime() {
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // Sunday - 0, Monday - 1, ..., Saturday - 6
+  const hour = now.getHours(); // Get current hour (0-23)
+
+  // Check if it's a weekday and between 10 AM (10) and 7 PM (19)
+  return dayOfWeek >= 1 && dayOfWeek <= 5 && hour >= 10 && hour < 19;
 }
